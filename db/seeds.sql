@@ -1,4 +1,9 @@
 USE burgers_db;
 
 INSERT INTO burgers (burger_name, devoured)
-values ('Cheeseburger', false), ('Hamburger', false), ('Angus beef burger', false), ('Vegetarian burger', true), ('Pineapple and beetroot sunshine burger', true);
+VALUES 
+    ('Cheeseburger', FALSE ), 
+    ('Hamburger', FALSE ), 
+    ('Angus beef burger', FALSE ), 
+    ('Vegetarian burger', TRUE ), 
+    ('Pineapple and beetroot sunshine burger', TRUE );
