@@ -1,43 +1,43 @@
 // these methods will execute mysql queries in the controllers
 // to retrieve and store data in the database
 
-import connection from './connection.js';
+const connection = require('./connection.js');
 
 const orm = {
-    selectAll: () => {
-        let queryString = `SELECT * FROM burgers`;
+    selectAll: (tableName, cb) => {
+        let queryString = "SELECT * FROM ??";
         connection.query(
             queryString,
+            [tableName],
             function (err, result) {
                 if (err) throw err;
-                console.log('selected all: ' + result);
+                cb(result);
             }
         )
     },
-    insertOne: (burgerName) => {
-        let queryString = `INSERT INTO burgers (burger_name, devoured)
-        VALUES ('?', false)`;
+    insertOne: (tableName, col1, col2, val1, val2, cb) => {
+        let queryString = `INSERT INTO ?? ('?', ?)
+        VALUES ('?', ?)`;
         connection.query(
             queryString,
-            [burgerName],
+            [tableName, col1, col2, val1, val2],
             function (err, result) {
                 if (err) throw err;
-                console.log('inserted: ' + result);
+                cb(result);
             }
         )
     },
-    updateOne: (burgerName) => {
-        let queryString = `UPDATE burgers SET burger_name='?'`;
+    updateOne: (tableName, col1, val1, cb) => {
+        let queryString = `UPDATE ?? SET ??='?'`;
         connection.query(
             queryString,
-            [burgerName],
+            [tableName, col1, val1],
             function (err, result) {
                 if (err) throw err;
-                console.log('updated: ' + result);
+                cb(result);
             }
         )
-    },
-    
+    }
 };
 
 module.exports = orm;
