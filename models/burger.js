@@ -1,23 +1,23 @@
 // calls orm functions for burger input
 
-import orm from '../config/orm.js';
+const orm = require('../config/orm.js');
 
 const burger = {
     selectAll: function(cb) {
-        orm.selectAll('burger', (res) => {
+        orm.selectAll("burgers", function(res) {
             cb(res)
         });
     },
     insertOne: function(burgerName, cb) {
         orm.insertOne(
-            'burger', 'burger_name', 'devoured', burgerName, false, 
+            "burgers", 'burger_name', 'devoured', burgerName, FALSE, 
             (res) => {
                 cb(res)
             }
         );
     },
     updateOne: function(burgerName, cb) {
-        orm.selectAll('burger', 'burger_name', burgerName, (res) => {
+        orm.updateOne("burgers", 'burger_name', burgerName, (res) => {
             cb(res)
         });
     }
