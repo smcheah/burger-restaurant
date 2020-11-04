@@ -1,0 +1,25 @@
+<h1>eat da burger!</h1>
+
+<h2>burgers on the menu</h2>
+<ul>
+    {{#each burgers}}
+        {{#if devoured}}
+            <li>{{burger_name}}</li>
+        {{/if}}
+    {{/each}}
+</ul>
+
+<h2>burgers devoured</h2>
+<ul>
+    {{#each burgers}}
+        {{#unless devoured}}
+            <li>{{burger_name}}</li>
+        {{/unless}}
+    {{/each}}
+</ul>
+
+<form>
+    <input type="text" aria-placeholder="submit a burger name!">
+    <br>
+    <button type="submit">Submit</button>
+</form>
