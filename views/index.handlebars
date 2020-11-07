@@ -1,29 +1,37 @@
-<h1>eat da burger!</h1>
-
-
-<h2>burgers on the menu</h2>
-<ul>
-    {{#each burgers}}
+<section class="burger-menu">
+    <h2>burgers on the menu</h2>
+    <table>
+        {{#each burgers}}
         {{#unless devoured}}
-            <li>
-                {{burger_name}}
-                <button data-id="{{id}}" class="devour-burger">eat! {{id}}</button>
-            </li>
+        <tr>
+            <td>{{id}}. {{burger_name}}</td>
+            <td><button data-id="{{id}}" class="devour-burger">eat!</button></td>
+        </tr>
         {{/unless}}
-    {{/each}}
-</ul>
+        {{/each}}
+    </table>
+</section>
 
-<h2>burgers devoured</h2>
-<ul>
-    {{#each burgers}}
+<main>
+    <h1>eat da burger!</h1>
+    <img src="/images/burger.png" alt="cartoon burger">
+
+    <form class="add-burger">
+        <input type="text" id="burger-name" placeholder="submit a burger name!">
+        <br>
+        <button type="submit">add new burger</button>
+    </form>
+</main>
+
+<section class="burger-history">
+    <h2>burgers devoured</h2>
+    <table>
+        {{#each burgers}}
         {{#if devoured}}
-            <li>{{burger_name}}</li>
+        <tr>
+            <td>{{id}}. {{burger_name}}</td>
+        </tr>
         {{/if}}
-    {{/each}}
-</ul>
-
-<form class="add-burger">
-    <input type="text" id="burger-name" placeholder="submit a burger name!">
-    <br>
-    <button type="submit">add new burger</button>
-</form>
+        {{/each}}
+    </table>
+</section>
