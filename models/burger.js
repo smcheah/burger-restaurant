@@ -10,14 +10,14 @@ const burger = {
     },
     insertOne: function(burgerName, cb) {
         orm.insertOne(
-            "burgers", 'burger_name', 'devoured', burgerName, FALSE, 
+            'burgers', 'burger_name', 'devoured', burgerName, false, 
             (res) => {
                 cb(res)
             }
         );
     },
-    updateOne: function(burgerName, cb) {
-        orm.updateOne("burgers", 'burger_name', burgerName, (res) => {
+    updateOne: function(id, cb) {
+        orm.updateOne("burgers", 'devoured', true, id, (res) => {
             cb(res)
         });
     }
