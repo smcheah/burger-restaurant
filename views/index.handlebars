@@ -1,26 +1,29 @@
 <h1>eat da burger!</h1>
 
+
 <h2>burgers on the menu</h2>
 <ul>
     {{#each burgers}}
-        {{#if devoured}}
-            <li>{{burger_name}}</li>
-            <button>eat!</button>
-        {{/if}}
+        {{#unless devoured}}
+            <li>
+                {{burger_name}}
+                <button data-id="{{id}}" class="devour-burger">eat! {{id}}</button>
+            </li>
+        {{/unless}}
     {{/each}}
 </ul>
 
 <h2>burgers devoured</h2>
 <ul>
     {{#each burgers}}
-        {{#unless devoured}}
+        {{#if devoured}}
             <li>{{burger_name}}</li>
-        {{/unless}}
+        {{/if}}
     {{/each}}
 </ul>
 
-<form>
-    <input type="text" aria-placeholder="submit a burger name!">
+<form class="add-burger">
+    <input type="text" id="burger-name" placeholder="submit a burger name!">
     <br>
-    <button type="submit">Submit</button>
+    <button type="submit">add new burger</button>
 </form>
