@@ -16,8 +16,7 @@ const orm = {
         )
     },
     insertOne: (tableName, col1, col2, val1, val2, cb) => {
-        let queryString = `INSERT INTO ?? ('?', ?)
-        VALUES ('?', ?)`;
+        let queryString = `INSERT INTO ?? (??, ??) VALUES (?, ?)`;
         connection.query(
             queryString,
             [tableName, col1, col2, val1, val2],
@@ -27,11 +26,11 @@ const orm = {
             }
         )
     },
-    updateOne: (tableName, col1, val1, cb) => {
-        let queryString = `UPDATE ?? SET ??='?'`;
+    updateOne: (tableName, col1, val1, id, cb) => {
+        let queryString = `UPDATE ?? SET ??=? WHERE id=?`;
         connection.query(
             queryString,
-            [tableName, col1, val1],
+            [tableName, col1, val1, id],
             function (err, result) {
                 if (err) throw err;
                 cb(result);
