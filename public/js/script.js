@@ -1,8 +1,6 @@
 $(document).ready(function() {
 
     $('.devour-burger').on('click', (event) => {
-        // event.preventDefault();
-        
         let id = event.target.dataset.id;
 
         let toggleDevoured = {
@@ -24,13 +22,17 @@ $(document).ready(function() {
         let newBurger = {
             burger_name: $('#burger-name').val().trim()
         }
-
-        $.ajax('/api/burgers', {
-            type: 'POST',
-            data: newBurger
-        }).then(function() {
-            console.log('created new burger: ' + newBurger);
-            location.reload();
-        })
+        if ($('#burger-name').val().trim()) {
+            $.ajax('/api/burgers', {
+                type: 'POST',
+                data: newBurger
+            }).then(function() {
+                console.log('created new burger: ' + newBurger);
+                location.reload();
+            })
+        }
+        
     })
+
+    $('#heading-arc').arctext({radius: 400});
 })
