@@ -1,6 +1,122 @@
+@import url('https://fonts.googleapis.com/css2?family=Chicle&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Averia+Libre:wght@300;400;700&display=swap');
+
 html {
-    background-color: rgb(255, 187, 0);
+    background-color: rgb(255, 153, 0);
 }
 body {
-    display: flex;
+    display: grid;
+    grid-template-areas: 
+        "main"
+        "burger-menu"
+        "burger-history";
+    text-align: center;
+    margin: 5% auto;
+    font-family: 'Averia Libre', cursive;
+    font-weight: 300;
+    border: 1px solid black;
+}
+h1,
+h2 {
+    margin: 0;
+}
+button {
+    border: none;
+    border-radius: 30%;
+    padding: 10px;
+    box-shadow: inset 0 0 3px #0000005b, 
+                0 0 20px 1px #0000005b;
+    background-color: tomato;
+}
+button:hover {
+    background-color: yellow;
+}
+
+.burger-menu,
+.burger-history {
+    margin: 10px;
+    padding: 15% 10%;
+}
+
+main {
+    grid-area: main;
+    margin: 10px;
+    padding: 5%;
+    border: 1px solid black;
+}
+main h1 {
+    display: block;
+    font-family: 'Chicle', cursive;
+    letter-spacing: 0.5px;
+    font-size: 40px;
+}
+main img {
+    width: 100%;
+    max-width: 200px;
+}
+main input {
+    width: 90%;
+    margin: 2% auto;
+    padding: 10px;
+    font-family: 'Averia Libre', cursive;
+    font-weight: 400;
+    font-size: 20px;
+    text-align: center;
+    border: none;
+    box-shadow: 0 0 3px #0000005b, 
+                inset 0 0 20px 1px #0000005b;
+    border-radius: 10%;
+}
+
+h2 {
+    font-family: 'Averia Libre', cursive;
+    font-weight: 700;
+    font-size: 40px;
+    margin-bottom: 7%;
+}
+.burger-menu {
+    grid-area: burger-menu;
+    border: 1px solid black;
+}
+.burger-history {
+    grid-area: burger-history;
+    border: 1px solid black;
+}
+table {
+    text-align: left;
+    margin: 0 auto;
+    width: 100%;
+    border: 1px solid black;
+}
+tr, td {
+    border: 1px solid black;
+}
+
+@media screen and (min-width: 768px) {
+    body {
+        grid-template-columns: 50% 50%;
+        grid-template-areas: 
+            "main           main"
+            "burger-menu    burger-history";
+    }
+    main img {
+        max-width: 300px;
+    }
+    main h1 {
+        font-size: 70px;
+    }
+}
+@media screen and (min-width: 1100px) {
+    body {
+        grid-template-columns: 30% auto 30%;
+        grid-template-areas: 
+            "burger-menu main burger-history";
+        max-width: 1400px;
+    }
+    main img {
+        max-width: 400px;
+    }
+    main h1 {
+        font-size: 80px;
+    }
 }
