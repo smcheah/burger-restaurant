@@ -5,7 +5,7 @@
         {{#unless devoured}}
         <tr>
             <td>{{id}}. </td>
-            <td>{{burger_name}}</td>
+            <td class="menu-item">{{burger_name}}</td>
             <td><button data-id="{{id}}" class="devour-burger">eat!</button></td>
         </tr>
         {{/unless}}
@@ -18,7 +18,7 @@
     <img src="/images/burger.png" alt="cartoon burger">
 
     <form class="add-burger">
-        <input type="text" id="burger-name" placeholder="add a new burger name!">
+        <input type="text" id="burger-name" placeholder="add a new burger!">
         <br>
         <button type="submit">submit</button>
     </form>
@@ -31,7 +31,7 @@
         {{#if devoured}}
         <tr>
             <td>{{id}}. </td>
-            <td>{{burger_name}}</td>
+            <td class="menu-item">{{burger_name}}</td>
         </tr>
         {{/if}}
         {{/each}}
