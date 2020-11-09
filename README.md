@@ -32,11 +32,11 @@ Eat Da Burger! is a restaurant app that lets users input the names of burgers th
 
 ## Installation :hammer_and_wrench:
 
-Head to the deployed app here: 
+Head to the deployed app here: https://thawing-cliffs-82345.herokuapp.com/
 
 ## Usage Demo
 
-screenshots/gifs
+![Imgur](https://imgur.com/0OhcTbP.jpg)
 
 ## License ![License](https://img.shields.io/github/license/smcheah/burger-restaurant)
 
@@ -44,7 +44,7 @@ MIT
 
 ## Contributing
 
--   The [Contributor Covenant](https://www.contributor-covenant.org/) is an industry standard, but you can always write your own.
+-   The [Contributor Covenant](https://www.contributor-covenant.org/) is an industry standard
 
 Feel free to create a new issue or alternatively, make a pull request!
 
