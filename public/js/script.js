@@ -31,8 +31,8 @@ $(document).ready(function() {
                 location.reload();
             })
         }
-        
     })
-
-    $('#heading-arc').arctext({radius: 400});
+    
+    new CircleType(document.getElementById('heading-arc')).radius(470);
+    
 })
