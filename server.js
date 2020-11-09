@@ -1,12 +1,11 @@
 const express = require('express');
 
-const PORT = process.env.PORT || 8000;
+let PORT = process.env.PORT || 8000;
 let app = express();
-
-app.use(express.static("public"));
 
 app.use(express.urlencoded({extended: true}));
 app.use(express.json());
+app.use(express.static("public"));
 
 let template = require('express-handlebars');
 
