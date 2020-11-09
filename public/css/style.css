@@ -1,122 +1,151 @@
-@import url('https://fonts.googleapis.com/css2?family=Chicle&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Averia+Libre:wght@300;400;700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Chicle&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Averia+Libre:wght@300;400;700&display=swap");
 
 html {
-    background-color: rgb(255, 153, 0);
+	background-color: rgb(255, 102, 0);
 }
 body {
-    display: grid;
-    grid-template-areas: 
-        "main"
-        "burger-menu"
-        "burger-history";
-    text-align: center;
-    margin: 5% auto;
-    font-family: 'Averia Libre', cursive;
-    font-weight: 300;
-    border: 1px solid black;
+	display: grid;
+	grid-template-areas:
+		"main"
+		"burger-menu"
+		"burger-history";
+	text-align: center;
+	margin: 5% auto;
+	font-family: "Averia Libre", cursive;
+	font-weight: 300;
 }
+
 h1,
 h2 {
-    margin: 0;
+	margin: 0;
 }
+h2 {
+	font-family: "Averia Libre", cursive;
+	font-weight: 700;
+	font-size: 40px;
+	margin-bottom: 7%;
+}
+
 button {
-    border: none;
-    border-radius: 30%;
-    padding: 10px;
-    box-shadow: inset 0 0 3px #0000005b, 
-                0 0 20px 1px #0000005b;
-    background-color: tomato;
+	border: none;
+	border-radius: 10px;
+	padding: 5px 10px;
+	box-shadow: inset 0 0 3px #0000005b, 0 0 20px 1px #0000005b;
+	background-color: rgb(252, 119, 31);
+	font-family: "Averia Libre", cursive;
+	font-weight: 700;
+	font-size: 17px;
+}
+.add-burger button {
+	padding: 10px 15px;
 }
 button:hover {
-    background-color: yellow;
+	background-color: #ffbe57;
+	cursor: pointer;
 }
 
 .burger-menu,
 .burger-history {
-    margin: 10px;
-    padding: 15% 10%;
+	margin: 20px 10px;
+	padding: 10% 5%;
+	justify-items: center;
+	box-shadow: inset 0 0 3px #0000005b, 0 0 20px 1px #0000005b;
+	border-radius: 10px;
+	background-color: #c46f37;
 }
 
 main {
-    grid-area: main;
-    margin: 10px;
-    padding: 5%;
-    border: 1px solid black;
+	grid-area: main;
+	margin: 10px;
+	padding: 5%;
 }
 main h1 {
-    display: block;
-    font-family: 'Chicle', cursive;
-    letter-spacing: 0.5px;
-    font-size: 40px;
+	display: block;
+	font-family: "Chicle", cursive;
+	letter-spacing: 0.5px;
+	font-size: 50px;
 }
 main img {
-    width: 100%;
-    max-width: 200px;
+	width: 100%;
+	max-width: 200px;
 }
 main input {
-    width: 90%;
-    margin: 2% auto;
-    padding: 10px;
-    font-family: 'Averia Libre', cursive;
-    font-weight: 400;
-    font-size: 20px;
-    text-align: center;
-    border: none;
-    box-shadow: 0 0 3px #0000005b, 
-                inset 0 0 20px 1px #0000005b;
-    border-radius: 10%;
+	width: 90%;
+	margin: 4% auto;
+	margin-top: 10%;
+	padding: 10px;
+	font-family: "Averia Libre", cursive;
+	font-weight: 400;
+	font-size: 20px;
+	text-align: center;
+	border: none;
+	box-shadow: 0 0 3px #0000005b, inset 0 0 20px 1px #0000005b;
+	border-radius: 10px;
 }
 
-h2 {
-    font-family: 'Averia Libre', cursive;
-    font-weight: 700;
-    font-size: 40px;
-    margin-bottom: 7%;
-}
 .burger-menu {
-    grid-area: burger-menu;
-    border: 1px solid black;
+	grid-area: burger-menu;
 }
 .burger-history {
-    grid-area: burger-history;
-    border: 1px solid black;
+	grid-area: burger-history;
 }
+
 table {
-    text-align: left;
-    margin: 0 auto;
-    width: 100%;
-    border: 1px solid black;
+	text-align: left;
+	width: 100%;
+	font-size: 16px;
+	border-collapse: collapse;
 }
-tr, td {
-    border: 1px solid black;
+tr,
+td {
+	padding: 10px;
+	border: 10px solid #c46f36;
+}
+.menu-item {
+	box-shadow: 0 0 3px #0000005b, inset 0 0 20px 1px #0000005b;
+	border-radius: 10px;
+	width: 100%;
 }
 
 @media screen and (min-width: 768px) {
-    body {
-        grid-template-columns: 50% 50%;
-        grid-template-areas: 
-            "main           main"
-            "burger-menu    burger-history";
-    }
-    main img {
-        max-width: 300px;
-    }
-    main h1 {
-        font-size: 70px;
-    }
+	body {
+		grid-template-columns: 50% 50%;
+		grid-template-areas:
+			"main           main"
+			"burger-menu    burger-history";
+	}
+	main img {
+		max-width: 300px;
+	}
+	main h1 {
+		font-size: 70px;
+	}
+	main input {
+		margin: 5%;
+	}
+	table {
+		font-size: 18px;
+	}
+	.burger-menu,
+	.burger-history {
+		margin: 0 10px;
+	}
 }
 @media screen and (min-width: 1100px) {
-    body {
-        grid-template-columns: 30% auto 30%;
-        grid-template-areas: 
-            "burger-menu main burger-history";
-        max-width: 1400px;
-    }
-    main img {
-        max-width: 400px;
-    }
-    main h1 {
-        font-size: 80px;
-    }
+	body {
+		grid-template-columns: 30% auto 30%;
+		grid-template-areas: "burger-menu main burger-history";
+		max-width: 1400px;
+	}
+	main img {
+		max-width: 400px;
+	}
+	main h1 {
+		font-size: 80px;
+	}
+	.burger-menu,
+	.burger-history {
+		margin: 50px 10px;
+	}
 }
